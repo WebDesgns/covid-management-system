@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm, Form } from "../../components/use-form/use-form";
 import Controls from "../../components/controls/Controls";
 import { Grid } from "@mui/material";
@@ -23,7 +23,9 @@ const initialFValues = {
 };
 
 function UserForm(props) {
-    
+
+    const { addOrEdit, recordForEdit } = props;
+
     const validate = (fieldValues = values) => {
         let temp = {...errors}
         if ('fullName' in fieldValues)
@@ -37,7 +39,7 @@ function UserForm(props) {
         setErrors({
             ...temp
         })
-        console.log(errors);
+
         if (fieldValues === values)
             return Object.values(temp).every(x => x === "") //every() methods tests whether all the array passes the test
     
@@ -48,9 +50,15 @@ function UserForm(props) {
     const handleSubmit = event => {
         event.preventDefault()
         if (validate()) {
-            //addOrEdit(values, resetForm);
+            addOrEdit(values, resetForm);
         }
     }
+    useEffect(() => {
+        if (recordForEdit !== null)
+            setValues({
+                ...recordForEdit
+            })
+    }, [recordForEdit]);
 
     return (
         <Form  onSubmit={handleSubmit}>

@@ -1,16 +1,22 @@
 import React from "react";
 
-import { makeStyles } from "@mui/styles";
 import { AppBar, Toolbar, Grid, InputBase, IconButton } from "@mui/material";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import SearchIcon from "@mui/icons-material/Search";
-import "./styles/header.css";
+import { makeStyles } from '@mui/styles';
+
+
+const useStyles = makeStyles({
+    root: {
+        backgroundColor: 'white',
+    }
+})
 
 function Header() {
-
+    const classes = useStyles();
     return (
         <AppBar position="static">
-            <Toolbar className='header-root' >
+            <Toolbar className={classes.root} >
                 <Grid container alignItems="center" justifyContent="center">
                     <Grid item>
                         <InputBase

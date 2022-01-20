@@ -1,13 +1,11 @@
 import React from 'react';
 import { Button as MuiButton } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-
-
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
-    root: {
-        margin: '4px',
-        textTransform: 'none'
+    button: {
+        margin: '4px !important',
+        textTransform: 'none',
     }
 });
 
@@ -23,7 +21,7 @@ export default function Button(props) {
             color={color || 'primary'}
             onClick={onClick}
             {...other}
-            className={classes.root}>
+            className={classes.button}>
             {text}
         </MuiButton>
     )

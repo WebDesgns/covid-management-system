@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
+import { makeStyles } from '@mui/styles';
 
-import './styles/use-form.css';
+
+const useStyles = makeStyles({
+    root: {
+        '& .MuiFormControl-root': {
+            width: '85%',
+            margin: '8px',
+        }
+    }
+})
 
 export function useForm(initialFValues, validateOnChange = false, validate) {
 
@@ -32,10 +41,10 @@ export function useForm(initialFValues, validateOnChange = false, validate) {
 }
 
 export function Form(props) {
-
+    const classes = useStyles();
     const { children, ...other } = props;
     return (
-        <form className='use-form' autoComplete="off" {...other}>
+        <form className={classes.root} autoComplete="off" {...other}>
             {props.children}
         </form>
     )

@@ -1,19 +1,25 @@
 import React from "react";
-import UserPage from "./pages/normal-user/user-page";
+import { Route, Routes } from "react-router-dom";
 
-import "./App.css";
-import { CssBaseline } from "@mui/material";
+
+import Signin from "./pages/authentication/signin";
+import Signup from "./pages/authentication/signup";
 
 
 
 
 function App() {
     return (
-        <>
-        <UserPage />
-        <CssBaseline /> 
-        </>
+        
+        <Routes>
+            
+            <Route path="/signin" element={<Signin/>}/>
+            <Route path="/signup" element={<Signup/>}/>
+            
+        </Routes>
+       
+        
     );
-}
+};
 
 export default App;

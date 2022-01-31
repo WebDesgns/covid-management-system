@@ -1,15 +1,16 @@
-@use '../../scss/abstracts/' as *;
+@use '../../../scss//abstracts/' as *;
 @use 'sass:math';
 
 .sidebar {
     @include flex(stretch, flex-start);
     flex-direction: column;
     color: $txtColor;
-    width: $sideBarWidth;
+    width: 312px;
     background-color: $mainBg;
     height: 100vh;
     position: fixed;
     top: 0;
+    background-color: #f5f5f5;
     z-index: 100;
 
     @include tablet {

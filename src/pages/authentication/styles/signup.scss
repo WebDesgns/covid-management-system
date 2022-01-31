@@ -1,43 +1,56 @@
-
-.background{   
-    background-image: url("../images/square.jpg");
-    
-    padding: 20px;
+.signup-background{
+    display: flex;
     background-size: cover;
-    
-    
+    background-image: url(../images/peter-vanosdall-uZVtAixV8c8-unsplash.jpg);
+    height: 100vh;
+
+    @media (max-width: 700px) {
+        background-image: none;
+    }
 }
-
-
-
 .signup-container{
     display: flex;
     flex-direction: column;
-    max-height: 530px;
-    background-color: #333;
-    border-radius: 15px;
+    min-height: 600px;
+    background: rgb(245,245,245);
+    background: linear-gradient(166deg, rgba(245,245,245,1) 74%, rgba(196,164,56,1) 100%);
+    // background-color: #f5f5f5;
+    border-radius: 5px;
     box-sizing: border-box;
     width: 100%;
     margin: auto;
-    margin-top: 20px;
-    max-width: 400px;
-    padding: 30px 68px 40px;
-    margin-bottom: 100px;
+    max-width: 450px;
+    padding: 35px 68px 25px;
+    margin-top: 12px;
+    opacity: 0.95;
+
+    @media (max-width: 768px) {
+        margin-top: 12px;
+    }
 
     .title{
-        color: rgb(255, 255, 255);
+        color: #222222;
         font-size: 32px;
         font-weight: bold;
-        margin-bottom: 28px;
-        text-align: center;
+        margin-bottom: 18px;
+    }
+    
+    .text{
+        color: #383838;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .smalltext{
+        margin-top: 8px;
+        font-size: 13px;
+        line-height: normal;
+        color: #3d3c3c;
     }
     
     
-    
-    
-    
     .link{
-        color: #0d61b5;
+        color: #484646;
         text-decoration: none;
 
         &:hover{
@@ -60,15 +73,35 @@
         max-width: 450px;
         width: 100%;
 
+        .role{
+            padding: 20px 0px;
+            display: flex;
+
+            .role-label{
+                color: #222222;
+                padding-right: 5px;
+                font-weight: 600;
+            }
+
+            select{
+                background-color: #f5f5f5;
+                color: #202020;
+                font-size: 15px;
+                border: none
+            }
+        }
+
         input{
-            background: rgb(255, 255, 255);
+            background: #d4d1d1;
             border-radius: 4px;
             border: 0;
-            color: rgb(0, 0, 0);
+            color: #373737;
             height: 50px;
             line-height: 50px;
+            font-size: medium;
             padding: 5px 20px;
             margin-bottom: 20px;
+            border-color: #d4d1d1;
 
             &:last-of-type{
                 margin-bottom: 30px;
@@ -76,18 +109,18 @@
         }
 
         button{
-            background: #e50914;
+            background: #268be8;
             border-radius: 4px;
             font-size: 16px;
             font-weight: bold;
-            margin: 24px 0 12px;
+            margin: 18px 0 12px;
             padding: 16px;
             border: 0;
             color: white;
             cursor: pointer;
 
             &:disabled{
-                opacity: 0.45;
+                opacity: 0.5;
             }
         }
     }

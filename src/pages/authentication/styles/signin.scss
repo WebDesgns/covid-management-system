@@ -1,97 +1,108 @@
-
-
-    
-.background{   
-    background-image: url("../images/square.jpg");
-    
-    padding: 20px;
-    background-size: cover;
-    
-    
-}
-.signin-container{
-    
+.signin-background {
     display: flex;
-    flex-direction: column;
-    max-height: 600px;
-    background-color: #333;
-    border-radius: 15px;
-    box-sizing: border-box;
-    width: 100%;
-    margin: auto;
-    margin-top: 20px;
-    max-width: 400px;
-    padding: 30px 68px 40px;
-    margin-bottom: 100px;
-    
-    .title{
-        color: rgb(255, 255, 255);
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 28px;
-        text-align: center;
-    }
-    
-    
+    background-size: cover;
+    background-image: url(../images/peter-vanosdall-uZVtAixV8c8-unsplash.jpg);
+    height: 100vh;
 
-
-    
-    
-    .link{
-        color: #0d61b5;
-        text-decoration: none;
-
-        &:hover{
-            color: yellowgreen;
-        }
+    @media (max-width: 700px) {
+        background-image: none;
     }
 
-    .error{
-        background: #e87c03;
-        border-radius: 4px;
-        font-size: 14px;
-        margin: 0 0 16px;
-        color: white;
-        padding: 15px 20px;
-    }
-
-    .base{
+    .signin-container {
         display: flex;
         flex-direction: column;
-        max-width: 450px;
+        min-height: 550px;
+        background: rgb(245,245,245);
+        background: linear-gradient(166deg, rgba(245,245,245,1) 74%, rgba(196,164,56,1) 100%);
+        border-radius: 5px;
+        box-sizing: border-box;
         width: 100%;
+        margin: auto;
+        max-width: 450px;
+        padding: 60px 68px 40px;
+        margin-top: 50px;
+        opacity: 0.95;
 
-        input{
-            background: rgb(255, 255, 255);
-            border-radius: 4px;
-            border: 0;
-            color: rgb(0, 0, 0);
-            height: 50px;
-            line-height: 50px;
-            padding: 5px 20px;
-            margin-bottom: 20px;
-            
+        @media (max-width: 768px) {
+            margin-top: 12px;
+        }
 
-            &:last-of-type{
-                margin-bottom: 30px;
+        .title {
+            color: 161515;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 28px;
+        }
+
+        .text {
+            color: #484646;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .smalltext {
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: normal;
+            color: #484646;
+        }
+
+        .link {
+            color: #484646;
+            text-decoration: none;
+
+            &:hover {
+                color: yellowgreen;
+                // color: #284c01;
             }
         }
 
-        button{
-            background: #e50914;
+        .error {
+            background: #e87c03;
             border-radius: 4px;
-            font-size: 16px;
-            font-weight: bold;
-            margin: 24px 0 12px;
-            padding: 16px;
-            border: 0;
+            font-size: 14px;
+            margin: 0 0 16px;
             color: white;
-            cursor: pointer;
+            padding: 15px 20px;
+        }
 
-            &:disabled{
-                opacity: 0.45;
+        .base {
+            display: flex;
+            flex-direction: column;
+            max-width: 450px;
+            width: 100%;
+
+            input {
+                background: #d4d1d1;
+                border-radius: 4px;
+                border: 0;
+                color: #373737;
+                height: 50px;
+                line-height: 50px;
+                padding: 5px 20px;
+                margin-bottom: 20px;
+                font-size: medium;
+
+                &:last-of-type {
+                    margin-bottom: 30px;
+                }
+            }
+
+            button {
+                background: #2c454f;
+                border-radius: 4px;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 20px 0 18px;
+                padding: 16px;
+                border: 0;
+                color: white;
+                cursor: pointer;
+
+                &:disabled {
+                    opacity: 0.5;
+                }
             }
         }
     }
 }
- 

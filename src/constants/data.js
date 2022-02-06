@@ -39,42 +39,6 @@ const data = {
             data: [300, 300, 280, 380, 200, 300, 280, 350]
         }
     },
-    overall: [
-        {
-            value: '300K',
-            title: 'Orders'
-        },
-        {
-            value: '9.876K',
-            title: 'Customers'
-        },
-        {
-            value: '1.234K',
-            title: 'Products'
-        },
-        {
-            value: '$5678',
-            title: 'Revenue'
-        }
-    ],
-    revenueByChannel: [
-        {
-            title: 'Direct',
-            value: 70
-        },
-        {
-            title: 'External search',
-            value: 40
-        },
-        {
-            title: 'Referal',
-            value: 60
-        },
-        {
-            title: 'Social',
-            value: 30
-        }
-    ],
     revenueByMonths: {
         labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
         data: [2500, 1200, 1300, 1280, 1100, 2120, 3100, 790, 600, 1120, 2500, 3500]

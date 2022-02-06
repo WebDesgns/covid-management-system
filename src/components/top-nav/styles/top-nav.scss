@@ -2,10 +2,10 @@
 
 .topnav {
     @include flex(center, space-between);
-    margin-bottom: $spacing;
+    margin-bottom: 24px;
 
     @include tablet {
-        margin-bottom: $mobileSpacing;
+        margin-bottom: 16px;
     }
 }
 
@@ -17,7 +17,7 @@
     cursor: pointer;
     display: none;
 
-    @include tablet {
+    @media (max-width: 700px)  {
         display: flex;
     }
 

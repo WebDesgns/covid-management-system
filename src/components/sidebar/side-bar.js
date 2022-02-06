@@ -55,7 +55,7 @@ function SideBar({ menuItems }) {
                         <LogoutIcon />
                     </div>
                     <div className="sidebar__menu__item__txt">
-                        Logout
+                        <Link to='/signin'>Logout</Link>
                     </div>
                 </div>
             </div>

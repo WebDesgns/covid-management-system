@@ -5,10 +5,14 @@ import Controls from '../controls/Controls';
 import CloseIcon from '@mui/icons-material/Close';
 
 const useStyles = makeStyles({
+    '& .MuiPaper-root': {
+        margin: 'opx 32px',
+    },
     dialogWrapper: {
         padding: '16px',
         position: 'absolute',
-        top: '40px'
+        top: '0px',
+        width: '1100px',
     },
     dialogTitle: {
         paddingRight: '0px'
@@ -21,9 +25,9 @@ export default function Popup(props) {
     const classes = useStyles();
 
     return (
-        <Dialog open={openPopup} maxWidth="md" classes={{ paper: classes.dialogWrapper }}>
+        <Dialog open={openPopup} maxWidth='md' classes={{ paper: classes.dialogWrapper }}>
             <DialogTitle className={classes.dialogTitle}>
-                <div style={{ display: 'flex' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
                     <Typography variant="h6" component="div" style={{ flexGrow: 1 }}>
                         {title}
                     </Typography>
@@ -34,7 +38,7 @@ export default function Popup(props) {
                     </Controls.ActionButton>
                 </div>
             </DialogTitle>
-            <DialogContent dividers>
+            <DialogContent>
                 {children}
             </DialogContent>
         </Dialog>

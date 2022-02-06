@@ -12,8 +12,7 @@
         display: flex;
         flex-direction: column;
         min-height: 550px;
-        background: rgb(245,245,245);
-        background: linear-gradient(166deg, rgba(245,245,245,1) 74%, rgba(196,164,56,1) 100%);
+        background-color: #f5f5f5;
         border-radius: 5px;
         box-sizing: border-box;
         width: 100%;
@@ -21,7 +20,7 @@
         max-width: 450px;
         padding: 60px 68px 40px;
         margin-top: 50px;
-        opacity: 0.95;
+        opacity: 0.8;
 
         @media (max-width: 768px) {
             margin-top: 12px;

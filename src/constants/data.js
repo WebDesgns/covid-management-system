@@ -2,37 +2,37 @@ import images from "./images"
 
 const data = {
     user: {
-        name: 'Tuatta',
-        img: images.avt
+        name: 'Prasun',
+        img: images.user
     },
     summary: [
         {
-            title: 'Sales',
-            subtitle: 'Total sales today',
-            value: '$1.000',
-            percent: 70
+            title: 'Society',
+            subtitle: 'Total Society',
+            value: '150',
+            percent: (150*100/300).toFixed(0)
         },
         {
-            title: 'Orders',
-            subtitle: 'Total orders today',
-            value: '3000',
-            percent: 49
+            title: 'User',
+            subtitle: 'Total User',
+            value: '22000',
+            percent: (22000*100/30000).toFixed(0)
         },
         {
-            title: 'Revenue',
-            subtitle: 'Total revenue today',
-            value: '$678',
-            percent: 38
+            title: 'Covid',
+            subtitle: 'Total Covid Patient',
+            value: '2078',
+            percent: (2078*100/30000).toFixed(0)
         },
         {
-            title: 'Visits',
-            subtitle: 'Total visits today',
+            title: 'Recovered',
+            subtitle: 'Total Recovered',
             value: '2345',
             percent: 55
         }
     ],
     revenueSummary: {
-        title: 'Revenue',
+        title: 'Covid Patient',
         value: '$678',
         chartData: {
             labels: ['May', 'Jun', 'July', 'Aug', 'May', 'Jun', 'July', 'Aug'],
@@ -77,7 +77,7 @@ const data = {
     ],
     revenueByMonths: {
         labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
-        data: [250, 200, 300, 280, 100, 220, 310, 190, 200, 120, 250, 350]
+        data: [2500, 1200, 1300, 1280, 1100, 2120, 3100, 790, 600, 1120, 2500, 3500]
     }
 }
 

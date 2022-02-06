@@ -5,9 +5,9 @@ import { Grid } from "@mui/material";
 import * as filterData from '../../utils/filter';
 
 const genderItems = [
-    { id: "male", title: "Male" },
-    { id: "female", title: "Female" },
-    { id: "other", title: "Other" },
+    { id: "Male", title: "Male" },
+    { id: "Female", title: "Female" },
+    { id: "Other", title: "Other" },
 ];
 
 const initialFValues = {
@@ -17,7 +17,7 @@ const initialFValues = {
     email: "",
     mobile: "",
     city: "",
-    gender: "male",
+    gender: "Male",
     SocietyName: "",
     Vaccinated: false,
 };
@@ -36,6 +36,7 @@ function UserForm(props) {
             temp.mobile = fieldValues.mobile.length > 9 ? "" : "Minimum 10 numbers required."
         if ('SocietyName' in fieldValues)
             temp.SocietyName = fieldValues.SocietyName ? "" : "This field is required."
+            
         setErrors({
             ...temp
         })
@@ -61,7 +62,7 @@ function UserForm(props) {
     }, [recordForEdit]);
 
     return (
-        <Form  onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <Grid container>
                 <Grid item lg={6} xs={12}>
                     <Controls.Input

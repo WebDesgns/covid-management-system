@@ -42,7 +42,7 @@ function Signin() {
                             onChange={({ target }) => setPassword(target.value)}
                         ></input>
                         <button disabled={isInvalid} type="submit">
-                            Sign In
+                            <Link to='/'>Sign In</Link>
                         </button>
                     </form>
 

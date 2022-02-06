@@ -7,6 +7,10 @@ const useStyles = makeStyles({
         '& .MuiFormControl-root': {
             width: '85%',
             margin: '8px',
+            border: 'none',
+        },
+        '& .MuiDialogContent-root': {
+            border: 'none',
         }
     }
 })

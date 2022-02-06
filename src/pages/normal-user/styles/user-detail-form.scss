@@ -1,0 +1,94 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 700px) {
+        h1{
+            font-size: 1rem;
+        }
+    }
+    .head-details{
+        display: flex;
+        justify-content: space-between;
+
+        .detail-card{
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+            flex-wrap: wrap;
+            font-size: 2rem;
+            background-color: whitesmoke;
+            margin: 5px;
+            border-radius: 5px;
+            align-self: center;
+            align-items: center;
+
+            @media (max-width: 700px) {
+                font-size: 1rem;
+            }
+
+            .card-date{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-self: center;
+                align-items: center;
+                padding-left: 5px;
+                font-weight: 500;
+                border-left: 2px solid black;
+                
+                #dob{
+                    font-size: 0.5rem;
+                }
+                #date{
+                    font-size: 0.7rem;
+                }
+
+                @media (max-width: 700px) {
+                    border: none;
+
+                    #dob{
+                        font-size: 0.4rem;
+                    }
+                    #date{
+                        font-size: 0.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.row1{
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+
+    #heading{
+        font-weight: 400;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: grey;
+        margin-top: 5px;
+        letter-spacing: 2px;
+    }
+    #sub-heading{
+        border-top: 1px solid grey;
+        font-size: 1rem;
+    }
+
+    @media (max-width: 700px) {
+
+        #heading{
+            margin-top: 5px;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 0.5rem;
+        }
+        #sub-heading{
+            font-size: 0.8rem;
+            border-top: none;
+        }
+    }
+}

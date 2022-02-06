@@ -46,11 +46,12 @@ export default function useTable(records, headCells,filterFn) {
             setOrderBy(cellId)
         }
 
-        return (<TableHead>
+        return (
+        <TableHead>
             <TableRow>
                 {
                     headCells.map(headCell => (
-                        <TableCell key={headCell.id} align='center'
+                        <TableCell key={headCell.id}
                             sortDirection={orderBy === headCell.id ? order : false}>
                             {headCell.disableSorting ? headCell.label :
                                 <TableSortLabel

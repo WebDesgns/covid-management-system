@@ -1,10 +1,10 @@
 @use '../../../scss/abstracts/' as *;
 
 .main {
-    padding-left: 320px;
+    padding-left: 250px;
     overflow-x: hidden;
 
-    @include tablet {
+    @media (max-width: 700px)  {
         padding-left: 0;
         width: 100vw;
     }
@@ -14,10 +14,10 @@
         padding: 30px;
         transition: all 0.5s ease-in-out;
 
-        @include tablet {
+        @media (max-width: 700px) {
             padding: $mobileSpacing;
             position: relative;
-            background-color: $bodyBg;
+            background-color: whitesmoke;
             z-index: 100;
         }
     }
@@ -28,6 +28,10 @@
     overflow: hidden;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    transform: scale(0.8) translateX(50%);
+    transform: scale(0.8) translateX(13%);
     transition: all 0.5s ease-in-out;
+
+    @media (max-width: 700px)  {
+        transform: scale(0.8) translateX(45%);
+    }
 }

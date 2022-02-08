@@ -1,0 +1,34 @@
+@use '../../../scss/abstracts/' as *;
+
+.dashboard-wrapper {
+    @include flex(stretch);
+    @include tablet {
+        flex-direction: column;
+    }
+
+    &__main {
+        flex-grow: 1;
+        padding-right: 520px;
+
+        @include tablet {
+            padding-right: 0;
+        }
+    }
+
+    &__right {
+        width: 520px;
+        padding: 16px;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @include tablet {
+            position: relative;
+            padding: $mobileSpacing;
+            margin-top: $mobileSpacing;
+            border-radius: $borderRadius;
+            width: 100%;
+            height: max-content;
+        }
+    }
+}

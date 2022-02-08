@@ -6,11 +6,13 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
     root: {
         backgroundColor: 'whitesmoke !important',
+        maxWidth: "1100px",
+        margin: 'auto',
     },
     pageHeader: {
         padding: '40px 32px 40px 50px',
         display: 'flex',
-        marginBottom: '16px',
+        margin: '24px 0px',
     },
     pageIcon:{
         display: 'inline-block',
@@ -29,7 +31,7 @@ const useStyles = makeStyles({
 function PageHeader({ title, subTitle, icon }) {
     const classes = useStyles();
     return (
-        <Paper elevation={0} square className={classes.root}>
+        <Paper elevation={6} square className={classes.root}>
             <div className={classes.pageHeader}>
                 <Card className={classes.pageIcon}>
                     {icon}

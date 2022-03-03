@@ -7,6 +7,7 @@ import Controls from "../../components/controls/Controls";
 import useTable from "../../components/useTable/useTable";
 import Popup from "../../components/popup/Popup";
 import UserDeatilForm from "./user-details-form";
+import Prescription from "../../pages/Prescription";
 import * as filterData from "../../utils/filter";
 
 import { makeStyles } from "@mui/styles";
@@ -184,12 +185,13 @@ function UserPage() {
                     />
                 </Popup>
                 <Popup
-                    title="Medical Record"
+                    title="Prescription List"
                     openPopup={openPopupDetails}
                     setOpenPopup={setOpenPopupDetails}
                     display="inline-block"
                 >
-                    <UserDeatilForm item={recordForEdit} />
+                    {/* <UserDeatilForm item={recordForEdit} /> */}
+                    <Prescription />
                 </Popup>
                 <Notification notify={notify} setNotify={setNotify} />
                 <ConfirmDialog

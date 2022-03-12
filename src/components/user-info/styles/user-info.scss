@@ -1,0 +1,33 @@
+@use '../../../scss/abstracts/' as *;
+
+.user-info {
+    @include flex(center, flex-start);
+    background-color: $mainBg;
+    border-radius: $borderRadius;
+    height: 50px;
+    width: max-content;
+    padding: 5px;
+    background-color: whitesmoke;
+
+    &__img {
+        --size: 35px;
+        width: var(--size);
+        height: var(--size);
+        border-radius: $borderRadius;
+        padding: 5px;
+
+        img {
+            border-radius: $borderRadius;
+        }
+    }
+
+    &__name {
+        padding: 0 16px;
+        font-size: $fontSizeMedium;
+        font-weight: 700;
+
+        @include tablet {
+            padding: 0 16px;
+        }
+    }
+}

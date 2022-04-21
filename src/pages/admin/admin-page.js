@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet } from 'react-router-dom'
 import Sidebar from "../../components/sidebar/side-bar";
-import TopNav from "../../components/top-nav/top-nav";
 
 import HomeIcon from "@mui/icons-material/Home";
 import ApartmentIcon from "@mui/icons-material/Apartment";
@@ -15,12 +14,6 @@ const menuItems = [
         section: "home",
         icon: <HomeIcon />,
         text: "Home",
-    },
-    {
-        link: "society",
-        section: "society",
-        icon: <ApartmentIcon />,
-        text: "Society",
     },
     {
         link: "user",
@@ -37,7 +30,6 @@ function AdminPage() {
             <Sidebar menuItems={menuItems} />
             <div className="main">
                 <div className="main__content">
-                    <TopNav />
                     <Outlet />
                 </div>
             </div>

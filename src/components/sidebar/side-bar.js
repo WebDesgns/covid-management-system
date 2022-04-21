@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { firebase } from '../../firebase';
 
 import CloseIcon from '@mui/icons-material/Close';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -55,7 +56,7 @@ function SideBar({ menuItems }) {
                         <LogoutIcon />
                     </div>
                     <div className="sidebar__menu__item__txt">
-                        <Link to='/signin'>Logout</Link>
+                        <p to='/signin' onClick={() => firebase.auth().signOut()}>Logout</p>
                     </div>
                 </div>
             </div>

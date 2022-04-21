@@ -1,47 +1,46 @@
 import React from "react";
 
 import { Grid, Paper } from "@mui/material";
-import { Form } from "../../components/use-form/use-form";
 import WcIcon from '@mui/icons-material/Wc';
 
-import './styles/user-detail-form.scss';
+
+import '../assets/styles/user-detail-form.scss';
 
 function UserDeatilForm({ item }) {
-    
+
     return (
-    <>
-        <Form overflow-y='hidden'>
-            <Grid container border='none' >
+        <>
+            <Grid container border='none'>
                 <Grid item lg={12} xs={12}>
                     <div className="head">
-                        <h1>{item.fullName}</h1>
+                        <h1>{item?.fullName}</h1>
                         <div className="head-details">
                             <Paper className="detail-card" elevation={0} square>
-                                <p id='border'>21</p>
+                                <p id='border'>{item?.age}</p>
                                 <div className="card-date">
                                     <p id='dob'>Date Of Birth</p>
-                                    <p id='date'>March 7, 2000</p>
+                                    <p id='date'>{item?.dob}</p>
                                 </div>
                             </Paper>
-                            <Paper className="detail-card"elevation={0} square>
-                                <WcIcon fontSize='large'/>{item?.gender}
+                            <Paper className="detail-card" elevation={0} square>
+                                <WcIcon fontSize='large' />{item?.gender}
                             </Paper>
                         </div>
                     </div>
                     <Grid container className="row1">
                         <Grid item lg={6} md={6} xs={12} paddingRight={2}>
                             <h3 id='heading'>Address</h3>
-                            <p id='sub-heading'>606-3727 Ullamcorper. Street Roseville NH 11523 (786) 713-8616</p>
+                            <p id='sub-heading'>{item?.address}</p>
                         </Grid>
                         <Grid item lg={6} md={6} xs={12}>
                             <h3 id='heading'>Vaccinated</h3>
-                            <p id='sub-heading'>{item?.Vaccinated === true ? "Yes" : "No"}</p>
+                            <p id='sub-heading'>{item?.vaccinated}</p>
                         </Grid>
                     </Grid>
                     <Grid container className="row1">
                         <Grid item lg={4} md={4} xs={12} paddingRight={2}>
                             <h3 id='heading'>Society</h3>
-                            <p id='sub-heading'>{item?.SocietyName}</p>
+                            <p id='sub-heading'>{item?.societyName}</p>
                         </Grid>
                         <Grid item lg={4} md={4} xs={12}>
                             <h3 id='heading'>City</h3>
@@ -49,88 +48,94 @@ function UserDeatilForm({ item }) {
                         </Grid>
                         <Grid item lg={4} md={4} xs={12}>
                             <h3 id='heading'>Covid</h3>
-                            <p id='sub-heading'>No</p>
+                            <p id='sub-heading'>{item?.covid}</p>
                         </Grid>
                     </Grid>
-                    <br/>
+                    <br />
                     <h2>IN CASE OF EMERGENCY</h2>
                     <Grid container className="row1">
                         <Grid item lg={6} md={6} xs={12} paddingRight={2}>
                             <h3 id='heading'>YOUR GUARDIAN</h3>
-                            <p id='sub-heading'>Prasun Bhunia</p>
+                            <p id='sub-heading'>{item?.guardianName}</p>
                             <h3 id='heading'>ADDRESS</h3>
-                            <p id='sub-heading'>711-2880 Nulla St.Mankato Mississippi 96522 (257) 563-7401</p>
+                            <p id='sub-heading'>{item?.guardianAddress}</p>
                             <h3 id='heading'>Mobile No</h3>
-                            <p id='sub-heading'>{item?.mobile}</p>
+                            <p id='sub-heading'>{item?.guardianNo}</p>
                         </Grid>
                         <Grid item lg={6} md={6} xs={12}>
                             <h3 id='heading'>YOUR PROVIDER</h3>
-                            <p>Ashby Medical Center<br/></p>
-                            <p><br/></p>
+                            <p>{item?.medicalCareProvider}<br /></p>
+                            <p><br /></p>
                             <h3 id='heading'>ADDRESS</h3>
-                            <p id='sub-heading'>5587 Nunc. Avenue Erie Rhode Island 24975 (660) 663-4518</p>
+                            <p id='sub-heading'>{item?.medicalCareProviderAdress}</p>
                         </Grid>
                     </Grid>
-                    <br/>
+                    <br />
                     <h2>ALLERGIES</h2>
                     <Grid container className="row1">
-                        <Grid item lg={6} md={6} xs={12} paddingRight={2}>
-                            <h3 id='heading'>PENICILLIN</h3>
-                            <p id='sub-heading'><font size="3">Reaction:</font> Hives</p>
-                        </Grid>
-                        <Grid item lg={6} md={6} xs={12}>
-                            <h3 id='heading'>Codeine</h3>
-                            <p id='sub-heading'><font size="3">Reaction:</font> Shortness of breath</p>
-                        </Grid>
+                        {
+                            item?.allergies.map((item) => (
+                                <Grid key={Math.random()} item lg={6} md={6} xs={12} paddingRight={2}>
+                                    <h3 id='heading'>ALLERGIES</h3>
+                                    <p id='sub-heading'>{item}</p>
+                                </Grid>
+                            ))
+                        }
                     </Grid>
-                    <br/>
+                    <br />
                     <h2>MEDICAL HISTORY</h2>
                     <Grid container className="row1">
-                        <Grid item lg={6} md={6} xs={12} paddingRight={2}>
-                            <h3 id='heading'>PENICILLIN</h3>
-                            <p id='sub-heading'><font size="3">Reaction:</font> Hives</p>
-                        </Grid>
-                        <Grid item lg={6} md={6} xs={12}>
-                            <h3 id='heading'>Codeine</h3>
-                            <p id='sub-heading'><font size="3">Reaction:</font> Shortness of breath</p>
-                        </Grid>
+                        {
+                            item?.diseases.map(item => (
+                                <Grid key={Math.random()} item lg={6} md={6} xs={12} paddingRight={2}>
+                                    <h3 id='heading'>ALLERGIES</h3>
+                                    <p id='sub-heading'>{item}</p>
+                                </Grid>
+                            ))
+                        }
                     </Grid>
-                    <br/>
+                    <Grid container className="row1">
+                        {
+                            item?.symptoms.map(item => (
+                                <Grid key={Math.random()} item lg={6} md={6} xs={12} paddingRight={2}>
+                                    <h3 id='heading'>SYMPTOMS</h3>
+                                    <p id='sub-heading'>{item}</p>
+                                </Grid>
+                            ))
+                        }
+                    </Grid>
+                    <br />
                     <h2>MEDICAL INSURANCE</h2>
                     <Grid container className="row1">
                         <Grid item lg={6} md={6} xs={12} paddingRight={2}>
                             <h3 id='heading'>Name of Insurance Company</h3>
-                            <p id='sub-heading'>Policybazaar Medical Insurance</p>
+                            <p id='sub-heading'>{item?.insuranceCompany}</p>
                             <h3 id='heading'>Policy Number</h3>
-                            <p id='sub-heading'>48008</p>
+                            <p id='sub-heading'>{item?.policyNo}</p>
                             <h3 id='heading'>Policy Type:</h3>
                             <p id='sub-heading'></p>
                         </Grid>
                         <Grid item lg={6} md={6} xs={12}>
                             <h3 id='heading'>ADDRESS</h3>
-                            <p id='sub-heading'>5587 Nunc. Avenue Erie Rhode Island 24975 (660) 663-4518</p>
+                            <p id='sub-heading'>{item?.insuranceCompanyAddress}</p>
                             <h3 id='heading'>Expiry Date:</h3>
-                            <p id='sub-heading'>6/2/2022</p>
+                            <p id='sub-heading'>{item?.policyExpiryDate}</p>
                             <h3 id='heading'>Policy Limit:</h3>
                             <p id='sub-heading'></p>
                         </Grid>
                     </Grid>
                     <h2>LIST ANY MEDICATION TAKEN REGULARLY:</h2>
-                    <Grid container className="row1">
-                        <Grid item lg={6} md={6} xs={12} paddingRight={2}>
-                            <h3 id='heading'>Policy Type:</h3>
-                            <p id='sub-heading'></p>
-                        </Grid>
-                        <Grid item lg={6} md={6} xs={12}>
-                            <h3 id='heading'>ADDRESS</h3>
-                            <p id='sub-heading'>5587 Nunc. Avenue Erie Rhode Island 24975 (660) 663-4518</p>
-                            
-                        </Grid>
-                    </Grid>
+                    {
+                        item?.medicines.map(item => (
+                            <Grid key={Math.random()} item lg={6} md={6} xs={12} paddingRight={2}>
+                                <h3 id='heading'>Medicines</h3>
+                                <p id='sub-heading'>{item}</p>
+                            </Grid>
+                        ))
+                    }
                 </Grid>
             </Grid>
-        </Form>
-    </>
+        </>
     );
 }
 

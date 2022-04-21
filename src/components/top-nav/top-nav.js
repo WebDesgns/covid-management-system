@@ -1,6 +1,4 @@
 import React from 'react'
-import UserInfo from '../user-info/user-info'
-import { data } from '../../constants'
 
 import MenuIcon from '@mui/icons-material/Menu';
 import './styles/top-nav.scss';
@@ -12,7 +10,6 @@ const TopNav = () => {
 
     return (
         <div className='topnav'>
-            <UserInfo user={data.user} />
             <div className="sidebar-toggle" onClick={openSidebar}>
                 <MenuIcon />
             </div>

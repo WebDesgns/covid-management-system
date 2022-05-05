@@ -1,11 +1,14 @@
 import React from 'react'
-import { Dialog, DialogTitle, DialogContent, DialogActions, Typography, IconButton } from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Typography, IconButton, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import Controls from "../controls/Controls";
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
+    button: {
+        margin: '4px !important',
+        textTransform: 'none',
+    },
     dialog: {
         padding: "16px",
         position: 'absolute',
@@ -18,7 +21,7 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'center'
     },
     dialogAction: {
-        justifyContent: 'center'
+        justifyContent: 'center !important'
     },
     titleIcon: {
         backgroundColor: 'lightpink',
@@ -31,7 +34,7 @@ const useStyles = makeStyles(theme => ({
             fontSize: '8rem',
         }
     }
-}))
+})
 
 export default function ConfirmDialog(props) {
 
@@ -54,14 +57,8 @@ export default function ConfirmDialog(props) {
                 </Typography>
             </DialogContent>
             <DialogActions className={classes.dialogAction}>
-                <Controls.Button
-                    text="No"
-                    color="default"
-                    onClick={() => setConfirmDialog({ ...confirmDialog, isOpen: false })} />
-                <Controls.Button
-                    text="Yes"
-                    color="secondary"
-                    onClick={confirmDialog.onConfirm} />
+                <Button className={classes.button} variant='contained' color="error" onClick={() => setConfirmDialog({ ...confirmDialog, isOpen: false })}>No</Button>
+                <Button className={classes.button} variant='contained' color="secondary" onClick={confirmDialog?.onConfirm} >Yes</Button>
             </DialogActions>
         </Dialog>
     )

@@ -5,27 +5,20 @@ import { Outlet } from "react-router-dom";
 
 import "./styles/secretary-page.scss";
 import HomeIcon from "@mui/icons-material/Home";
-import ApartmentIcon from "@mui/icons-material/Apartment";
 import PeopleIcon from "@mui/icons-material/People";
 
 const menuItems = [
     {
-        link: "/secretary",
+        link: "/society",
         section: "home",
         icon: <HomeIcon />,
         text: "Home",
     },
     {
-        link: "/secretary/society",
-        section: "society",
-        icon: <ApartmentIcon />,
-        text: "Society",
-    },
-    {
-        link: "/member",
+        link: "member",
         section: "member",
         icon: <PeopleIcon />,
-        text: "Member",
+        text: "Members",
     },
 ];
 

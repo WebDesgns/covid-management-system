@@ -1,22 +1,38 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/auth";
 
 import "./styles/signup.scss";
 
 function Signup() {
+  const { signup } = useAuth();
   const [firstName, setFirstName] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("User");
+  const [role, setRole] = useState("user");
+  const [error, setError] = useState('');
+  
 
   const isInvalid = firstName === "" || password === "" || emailAddress === "";
 
-  const handleSignIn = (event) => {
+  const handleSignUp = async (event) => {
     event.preventDefault();
-    setFirstName("");
-    setEmailAddress("");
-    setPassword("");
-    setRole("User");
+    await signup(emailAddress, password)
+      .then((result) => {
+        result.user.updateProfile({
+          displayName: firstName,
+          photoURL: role,
+          // photoURL: Math.floor(Math.random() * 5) + 1,
+        });
+        localStorage.setItem('authUser', JSON.stringify(result));
+      })
+      .catch((error) => {
+        setFirstName('');
+        setEmailAddress('');
+        setPassword('');
+        setError(error.message);
+        setRole('user')
+      })
   };
 
   return (
@@ -24,18 +40,18 @@ function Signup() {
       <div className="signup-background">
         <div className="signup-container">
           <h1 className="title">Sign Up</h1>
-          {/* {error && <div className="error">{error}</div>} */}
-          <form className="base" onSubmit={handleSignIn} method="POST">
+          {error && <div className="error">{error}</div>}
+          <form className="base" onSubmit={handleSignUp}>
             <div className="role">
               <span className="role-label">Role :</span>
               <select
                 value={role}
                 onChange={({ target }) => setRole(target.value)}
               >
-                <option className="options" value="User">User</option>
-                <option className="options" value="Society">Society</option>
-                <option className="options" value="Admin">Admin</option>
-                <option className="options" value="Hospital">Hospital</option>
+                <option className="options" value="user">User</option>
+                <option className="options" value="society">Society</option>
+                <option className="options" value="admin">Admin</option>
+                <option className="options" value="hospital">Hospital</option>
               </select>
             </div>
             <input

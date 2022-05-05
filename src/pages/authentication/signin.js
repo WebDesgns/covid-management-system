@@ -1,19 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/auth";
 
 import "./styles/signin.scss";
 
 function Signin() {
-    const [emailAddress, setEmailAddress] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const { login } = useAuth()
+    const [emailAddress, setEmailAddress] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-    const isInvalid = password === "" || emailAddress === "";
+    const isInvalid = password === '' || emailAddress === '';
 
-    function handleSignIn(event) {
+    const handleSignIn = async (event) => {
         event.preventDefault();
-        setEmailAddress("");
-        setPassword("");
+
+        setError("")
+        await login(emailAddress, password).catch((error) => {
+            setEmailAddress('');
+            setPassword('');
+            setError(error.message);
+        })
     }
 
     return (
@@ -22,11 +29,7 @@ function Signin() {
                 <div className="signin-container">
                     <h1 className="title">Sign In</h1>
                     {error && <div className="error">{error}</div>}
-                    <form
-                        className="base"
-                        onSubmit={handleSignIn}
-                        method="POST"
-                    >
+                    <form className="base" onSubmit={handleSignIn}>
                         <input
                             placeholder="Email Address"
                             value={emailAddress}
@@ -42,7 +45,7 @@ function Signin() {
                             onChange={({ target }) => setPassword(target.value)}
                         ></input>
                         <button disabled={isInvalid} type="submit">
-                            <Link to='/'>Sign In</Link>
+                            Sign In
                         </button>
                     </form>
 

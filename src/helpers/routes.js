@@ -7,7 +7,7 @@ export function IsUserRedirect() {
   const location = useLocation();
  
   return (
-    user ? <Navigate to={{pathname: `/${user?.photoURL}`}} state={{ from: location }} replace /> : <Outlet />
+    user ? ( user?.photoURL ? <Navigate to={{pathname: `/${user?.photoURL}`}} state={{ from: location }} replace /> : <Navigate to="/" />) : <Outlet />
   )
 }
 

@@ -8,8 +8,6 @@ import Popup from "../../components/popup/Popup";
 import UserDeatilForm from "../user-details-form";
 import Prescription from "../../pages/Prescription";
 import * as filterData from "../../helpers/filter";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 
 import { makeStyles } from "@mui/styles";
 import {
@@ -83,16 +81,6 @@ function UserPage() {
   const { members } = filterData.GetMembers(user?.uid);
   const [openPopup, setOpenPopup] = useState(false);
   const [openPopupDetails, setOpenPopupDetails] = useState(false);
-
-  function save(){
-    const input = document.getElementById('save');
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png')
-      const pdf = new jsPDF('portrait', "mm", 'a4')
-      pdf.addImage(imgData, 'JPEG', 0, 0)
-      pdf.save('download.pdf')
-    })
-  }
 
   const [notify, setNotify] = useState({
     isOpen: false,

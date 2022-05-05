@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 
 import "./styles/signup.scss";
 
 function Signup() {
   const { signup } = useAuth();
- 
-  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
